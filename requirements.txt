@@ -4,3 +4,6 @@ html-testRunner
 behave
 behave-html-formatter
 allure-behave
+unittest-xml-reporting
+pytest
+allure-pytest
