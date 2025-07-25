@@ -1,0 +1,6 @@
+webdriver-manager
+selenium
+html-testRunner
+behave
+behave-html-formatter
+allure-behave
