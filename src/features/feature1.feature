@@ -1,7 +1,7 @@
 @mercado_libre
 Feature: Buscar producto en Mercado Libre
 
-@mercado_libre_sceneario_outline
+@mercado_libre_scenario_outline
 Scenario Outline: Ingresar a Mercado Libre y buscar un producto con diferentes artículos
     Given el usuario abre el navegador de pruebas
     When ingresa a la pagina de Mercado Libre
@@ -15,7 +15,7 @@ Scenario Outline: Ingresar a Mercado Libre y buscar un producto con diferentes a
     |Xbox Series X|
     |Nintendo Switch|
 
-@mercado_libre_sceneario
+@mercado_libre_scenario
 Scenario: Ingresar a Mercado Libre y buscar un producto (específico)
     Given el usuario abre el navegador de pruebas
     When ingresa a la pagina de Mercado Libre
