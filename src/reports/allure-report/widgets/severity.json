@@ -1,0 +1,51 @@
+[ {
+  "uid" : "60132483930823b5",
+  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.1 ",
+  "time" : {
+    "start" : 1754523305672,
+    "stop" : 1754523321621,
+    "duration" : 15949
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ad34b8f70c2f54c1",
+  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.3 ",
+  "time" : {
+    "start" : 1754523337304,
+    "stop" : 1754523353045,
+    "duration" : 15741
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "a6f94721cc95f945",
+  "name" : "Ingresar a Mercado Libre y buscar un producto (específico)",
+  "time" : {
+    "start" : 1754523353045,
+    "stop" : 1754523368706,
+    "duration" : 15661
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "5b2627ac4c0d9f2e",
+  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.2 ",
+  "time" : {
+    "start" : 1754523321624,
+    "stop" : 1754523337302,
+    "duration" : 15678
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "931200a1b369799e",
+  "name" : "Mover elemento en la pantalla",
+  "time" : {
+    "start" : 1754523288117,
+    "stop" : 1754523305669,
+    "duration" : 17552
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

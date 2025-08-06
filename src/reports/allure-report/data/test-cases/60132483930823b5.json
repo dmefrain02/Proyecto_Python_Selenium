@@ -1,0 +1,134 @@
+{
+  "uid" : "60132483930823b5",
+  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.1 ",
+  "fullName" : "Buscar producto en Mercado Libre: Ingresar a Mercado Libre y buscar un producto con diferentes artículos",
+  "historyId" : "9650d4befb9014bf629d6daae4fe0524",
+  "time" : {
+    "start" : 1754523305672,
+    "stop" : 1754523321621,
+    "duration" : 15949
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given el usuario abre el navegador de pruebas",
+      "time" : {
+        "start" : 1754523305673,
+        "stop" : 1754523307782,
+        "duration" : 2109
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When ingresa a la pagina de Mercado Libre",
+      "time" : {
+        "start" : 1754523307782,
+        "stop" : 1754523310397,
+        "duration" : 2615
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When usuario busca el producto PlayStation 5",
+      "time" : {
+        "start" : 1754523310397,
+        "stop" : 1754523312480,
+        "duration" : 2083
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When usuario presiona la tecla Enter",
+      "time" : {
+        "start" : 1754523312480,
+        "stop" : 1754523315299,
+        "duration" : 2819
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then verifica que se muestran los resultados de la búsqueda",
+      "time" : {
+        "start" : 1754523315300,
+        "stop" : 1754523317512,
+        "duration" : 2212
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 5,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "tag",
+    "value" : "mercado_libre"
+  }, {
+    "name" : "feature",
+    "value" : "Buscar producto en Mercado Libre"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "Articulo",
+    "value" : "PlayStation 5"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "mercado_libre" ]
+  },
+  "source" : "60132483930823b5.json",
+  "parameterValues" : [ "PlayStation 5" ]
+}

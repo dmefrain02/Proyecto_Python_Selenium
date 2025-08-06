@@ -1,0 +1,119 @@
+{
+  "uid" : "931200a1b369799e",
+  "name" : "Mover elemento en la pantalla",
+  "fullName" : "Prueba en Sitio DemoQA para mover un elemento: Mover elemento en la pantalla",
+  "historyId" : "c94257b86576c0a3fdfe8008aa4fc0ba",
+  "time" : {
+    "start" : 1754523288117,
+    "stop" : 1754523305669,
+    "duration" : 17552
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Given el usuario abre el navegador",
+      "time" : {
+        "start" : 1754523288117,
+        "stop" : 1754523290486,
+        "duration" : 2369
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When ingresa a la pagina de DemoQA",
+      "time" : {
+        "start" : 1754523290486,
+        "stop" : 1754523292968,
+        "duration" : 2482
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "When usuario arrastra el elemento \"Draggable\" a la nueva posición",
+      "time" : {
+        "start" : 1754523292968,
+        "stop" : 1754523299280,
+        "duration" : 6312
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    }, {
+      "name" : "Then verifica que el elemento se ha movido a la nueva posición",
+      "time" : {
+        "start" : 1754523299280,
+        "stop" : 1754523301588,
+        "duration" : 2308
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "hasContent" : false,
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "hasContent" : true,
+    "stepsCount" : 4,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "tag",
+    "value" : "demo_qa"
+  }, {
+    "name" : "tag",
+    "value" : "demo_qa_scenario"
+  }, {
+    "name" : "feature",
+    "value" : "Prueba en Sitio DemoQA para mover un elemento"
+  }, {
+    "name" : "framework",
+    "value" : "behave"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ "demo_qa", "demo_qa_scenario" ]
+  },
+  "source" : "931200a1b369799e.json",
+  "parameterValues" : [ ]
+}

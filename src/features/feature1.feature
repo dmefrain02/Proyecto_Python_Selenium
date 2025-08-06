@@ -1,3 +1,4 @@
+@mercado_libre
 Feature: Buscar producto en Mercado Libre
 
 Scenario Outline: Ingresar a Mercado Libre y buscar un producto con diferentes artículos
@@ -22,17 +23,27 @@ Scenario: Ingresar a Mercado Libre y buscar un producto (específico)
 
 ## Ejecutar pruebas en behave en consola: behave
 
-## Ejecutar pruebas en behave con generacion de reportes allure y html en consola 
-#behave -f allure_behave.formatter:AllureFormatter -o reports/allure-results
+## Ejecutar un solo feature o escenario de pruebas en behave
+## behave -t @demo_qa (ejecutar solo el feature de DemoQA con el tag @demo_qa)
+## behave -t @demo_qa_scenario (ejecutar solo un escenario del feature de DemoQA con el tag @demo_qa_scenario)
+## behave feature.feature (ejecutar el feature completo sin tags)
+
+## Ejecutar pruebas en behave con generacion de reportes allure y html en consola con/sin tags 
+#behave -f allure_behave.formatter:AllureFormatter -o ../reports/allure-results -t @mercado_libre
+#behave -f allure_behave.formatter:AllureFormatter -o ../reports/allure-results
+#behave -f allure_behave.formatter:AllureFormatter -o allure-results -t @mercado_libre
 #behave -f allure_behave.formatter:AllureFormatter -o allure-results
 
-#Generacion de reporte Allure
-#allure serve reports/allure-results
+#Generacion de reporte Allure en carpeta temporal a partir de los resultados generados
+#allure serve ../reports/allure-results
 #allure serve allure-results
 
-#Generar reporte Allure limpiar resultados anteriores
-#allure generate reports/allure-results -o reports/allure-report --clean
+#Abrir el reporte Allure a partir de la carpeta allure report generada con los resultados
+#allure generate ../reports/allure-results -o ../reports/allure-report --clean
 #allure generate allure-results -o allure-report --clean
+#allure open ../reports/allure-report
 
-#Generacion Reporte HTML
+#Generacion Reporte HTML con/sin tags
+#behave -f behave_html_formatter:HTMLFormatter -o reports_html/html_report.html -t @mercado_libre
+#behave -f behave_html_formatter:HTMLFormatter -o reports_html/html_report.html @demo_qa_scenario
 #behave -f behave_html_formatter:HTMLFormatter -o reports_html/html_report.html
