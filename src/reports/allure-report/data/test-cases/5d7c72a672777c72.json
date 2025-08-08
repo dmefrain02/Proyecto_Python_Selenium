@@ -1,12 +1,12 @@
 {
-  "uid" : "a6f94721cc95f945",
-  "name" : "Ingresar a Mercado Libre y buscar un producto (específico)",
-  "fullName" : "Buscar producto en Mercado Libre: Ingresar a Mercado Libre y buscar un producto (específico)",
-  "historyId" : "72cfc9c016498699f16eb4835e06007d",
+  "uid" : "5d7c72a672777c72",
+  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.2 ",
+  "fullName" : "Buscar producto en Mercado Libre: Ingresar a Mercado Libre y buscar un producto con diferentes artículos",
+  "historyId" : "3c580a5de4d7dbf25734cdeab771a080",
   "time" : {
-    "start" : 1754523353045,
-    "stop" : 1754523368706,
-    "duration" : 15661
+    "start" : 1754619051243,
+    "stop" : 1754619067104,
+    "duration" : 15861
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,85 +16,85 @@
     "steps" : [ {
       "name" : "Given el usuario abre el navegador de pruebas",
       "time" : {
-        "start" : 1754523353046,
-        "stop" : 1754523355181,
-        "duration" : 2135
+        "start" : 1754619051243,
+        "stop" : 1754619053524,
+        "duration" : 2281
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "When ingresa a la pagina de Mercado Libre",
       "time" : {
-        "start" : 1754523355182,
-        "stop" : 1754523357739,
-        "duration" : 2557
+        "start" : 1754619053524,
+        "stop" : 1754619056207,
+        "duration" : 2683
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
-      "name" : "When usuario busca el producto Roku Streaming Stick",
+      "name" : "When usuario busca el producto Xbox Series X",
       "time" : {
-        "start" : 1754523357739,
-        "stop" : 1754523359821,
-        "duration" : 2082
+        "start" : 1754619056207,
+        "stop" : 1754619058281,
+        "duration" : 2074
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "When usuario presiona la tecla Enter",
       "time" : {
-        "start" : 1754523359822,
-        "stop" : 1754523362402,
-        "duration" : 2580
+        "start" : 1754619058282,
+        "stop" : 1754619060812,
+        "duration" : 2530
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "Then verifica que se muestran los resultados de la búsqueda",
       "time" : {
-        "start" : 1754523362402,
-        "stop" : 1754523364609,
-        "duration" : 2207
+        "start" : 1754619060812,
+        "stop" : 1754619063026,
+        "duration" : 2214
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : true,
-    "stepsCount" : 5,
     "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -103,6 +103,9 @@
   }, {
     "name" : "tag",
     "value" : "mercado_libre"
+  }, {
+    "name" : "tag",
+    "value" : "mercado_libre_scenario_outline"
   }, {
     "name" : "feature",
     "value" : "Buscar producto en Mercado Libre"
@@ -116,7 +119,10 @@
     "name" : "resultFormat",
     "value" : "allure2"
   } ],
-  "parameters" : [ ],
+  "parameters" : [ {
+    "name" : "Articulo",
+    "value" : "Xbox Series X"
+  } ],
   "links" : [ ],
   "hidden" : false,
   "retry" : false,
@@ -124,8 +130,8 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
-    "tags" : [ "mercado_libre" ]
+    "tags" : [ "mercado_libre_scenario_outline", "mercado_libre" ]
   },
-  "source" : "a6f94721cc95f945.json",
-  "parameterValues" : [ ]
+  "source" : "5d7c72a672777c72.json",
+  "parameterValues" : [ "Xbox Series X" ]
 }

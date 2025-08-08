@@ -1,12 +1,12 @@
 {
-  "uid" : "60132483930823b5",
-  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.1 ",
+  "uid" : "e4cfcab87623e475",
+  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.3 ",
   "fullName" : "Buscar producto en Mercado Libre: Ingresar a Mercado Libre y buscar un producto con diferentes artículos",
-  "historyId" : "9650d4befb9014bf629d6daae4fe0524",
+  "historyId" : "ed62bac9074a80ca8fb8dcdd8a87e9cc",
   "time" : {
-    "start" : 1754523305672,
-    "stop" : 1754523321621,
-    "duration" : 15949
+    "start" : 1754619067114,
+    "stop" : 1754619083021,
+    "duration" : 15907
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,85 +16,85 @@
     "steps" : [ {
       "name" : "Given el usuario abre el navegador de pruebas",
       "time" : {
-        "start" : 1754523305673,
-        "stop" : 1754523307782,
-        "duration" : 2109
+        "start" : 1754619067115,
+        "stop" : 1754619069326,
+        "duration" : 2211
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "When ingresa a la pagina de Mercado Libre",
       "time" : {
-        "start" : 1754523307782,
-        "stop" : 1754523310397,
-        "duration" : 2615
+        "start" : 1754619069326,
+        "stop" : 1754619071955,
+        "duration" : 2629
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
-      "name" : "When usuario busca el producto PlayStation 5",
+      "name" : "When usuario busca el producto Nintendo Switch",
       "time" : {
-        "start" : 1754523310397,
-        "stop" : 1754523312480,
-        "duration" : 2083
+        "start" : 1754619071955,
+        "stop" : 1754619074042,
+        "duration" : 2087
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "When usuario presiona la tecla Enter",
       "time" : {
-        "start" : 1754523312480,
-        "stop" : 1754523315299,
-        "duration" : 2819
+        "start" : 1754619074042,
+        "stop" : 1754619076681,
+        "duration" : 2639
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "Then verifica que se muestran los resultados de la búsqueda",
       "time" : {
-        "start" : 1754523315300,
-        "stop" : 1754523317512,
-        "duration" : 2212
+        "start" : 1754619076681,
+        "stop" : 1754619078927,
+        "duration" : 2246
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : true,
-    "stepsCount" : 5,
     "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -103,6 +103,9 @@
   }, {
     "name" : "tag",
     "value" : "mercado_libre"
+  }, {
+    "name" : "tag",
+    "value" : "mercado_libre_scenario_outline"
   }, {
     "name" : "feature",
     "value" : "Buscar producto en Mercado Libre"
@@ -118,7 +121,7 @@
   } ],
   "parameters" : [ {
     "name" : "Articulo",
-    "value" : "PlayStation 5"
+    "value" : "Nintendo Switch"
   } ],
   "links" : [ ],
   "hidden" : false,
@@ -127,8 +130,8 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
-    "tags" : [ "mercado_libre" ]
+    "tags" : [ "mercado_libre_scenario_outline", "mercado_libre" ]
   },
-  "source" : "60132483930823b5.json",
-  "parameterValues" : [ "PlayStation 5" ]
+  "source" : "e4cfcab87623e475.json",
+  "parameterValues" : [ "Nintendo Switch" ]
 }

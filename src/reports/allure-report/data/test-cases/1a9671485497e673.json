@@ -1,12 +1,12 @@
 {
-  "uid" : "ad34b8f70c2f54c1",
-  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.3 ",
+  "uid" : "1a9671485497e673",
+  "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.1 ",
   "fullName" : "Buscar producto en Mercado Libre: Ingresar a Mercado Libre y buscar un producto con diferentes artículos",
-  "historyId" : "ed62bac9074a80ca8fb8dcdd8a87e9cc",
+  "historyId" : "9650d4befb9014bf629d6daae4fe0524",
   "time" : {
-    "start" : 1754523337304,
-    "stop" : 1754523353045,
-    "duration" : 15741
+    "start" : 1754619034754,
+    "stop" : 1754619051241,
+    "duration" : 16487
   },
   "status" : "passed",
   "flaky" : false,
@@ -16,85 +16,85 @@
     "steps" : [ {
       "name" : "Given el usuario abre el navegador de pruebas",
       "time" : {
-        "start" : 1754523337305,
-        "stop" : 1754523339394,
-        "duration" : 2089
+        "start" : 1754619034754,
+        "stop" : 1754619037177,
+        "duration" : 2423
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "When ingresa a la pagina de Mercado Libre",
       "time" : {
-        "start" : 1754523339395,
-        "stop" : 1754523342030,
-        "duration" : 2635
+        "start" : 1754619037177,
+        "stop" : 1754619040055,
+        "duration" : 2878
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
-      "name" : "When usuario busca el producto Nintendo Switch",
+      "name" : "When usuario busca el producto PlayStation 5",
       "time" : {
-        "start" : 1754523342031,
-        "stop" : 1754523344133,
-        "duration" : 2102
+        "start" : 1754619040056,
+        "stop" : 1754619042147,
+        "duration" : 2091
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "When usuario presiona la tecla Enter",
       "time" : {
-        "start" : 1754523344133,
-        "stop" : 1754523346725,
-        "duration" : 2592
+        "start" : 1754619042148,
+        "stop" : 1754619044923,
+        "duration" : 2775
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     }, {
       "name" : "Then verifica que se muestran los resultados de la búsqueda",
       "time" : {
-        "start" : 1754523346725,
-        "stop" : 1754523348943,
-        "duration" : 2218
+        "start" : 1754619044924,
+        "stop" : 1754619047148,
+        "duration" : 2224
       },
       "status" : "passed",
       "steps" : [ ],
       "attachments" : [ ],
       "parameters" : [ ],
-      "hasContent" : false,
-      "stepsCount" : 0,
       "attachmentsCount" : 0,
-      "shouldDisplayMessage" : false
+      "shouldDisplayMessage" : false,
+      "stepsCount" : 0,
+      "hasContent" : false
     } ],
     "attachments" : [ ],
     "parameters" : [ ],
-    "hasContent" : true,
-    "stepsCount" : 5,
     "attachmentsCount" : 0,
-    "shouldDisplayMessage" : false
+    "shouldDisplayMessage" : false,
+    "stepsCount" : 5,
+    "hasContent" : true
   },
   "afterStages" : [ ],
   "labels" : [ {
@@ -103,6 +103,9 @@
   }, {
     "name" : "tag",
     "value" : "mercado_libre"
+  }, {
+    "name" : "tag",
+    "value" : "mercado_libre_scenario_outline"
   }, {
     "name" : "feature",
     "value" : "Buscar producto en Mercado Libre"
@@ -118,7 +121,7 @@
   } ],
   "parameters" : [ {
     "name" : "Articulo",
-    "value" : "Nintendo Switch"
+    "value" : "PlayStation 5"
   } ],
   "links" : [ ],
   "hidden" : false,
@@ -127,8 +130,8 @@
     "severity" : "normal",
     "retries" : [ ],
     "categories" : [ ],
-    "tags" : [ "mercado_libre" ]
+    "tags" : [ "mercado_libre_scenario_outline", "mercado_libre" ]
   },
-  "source" : "ad34b8f70c2f54c1.json",
-  "parameterValues" : [ "Nintendo Switch" ]
+  "source" : "1a9671485497e673.json",
+  "parameterValues" : [ "PlayStation 5" ]
 }
