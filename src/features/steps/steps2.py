@@ -9,6 +9,7 @@ from selenium.webdriver.common.keys import Keys
 import allure
 import os
 from datetime import datetime
+#import src.Functions_Utilitaries.functions as func
 
 @given('el usuario abre el navegador de pruebas')
 def step_open_navegador(context):
@@ -24,7 +25,7 @@ def step_open_navegador(context):
     context.driver = webdriver.Chrome(service=service, options=options)
 
 @when('ingresa a la pagina de Mercado Libre')
-def step_ingresa_pagin(context):
+def step_ingresa_pagina(context):
     context.driver.get("https://www.mercadolibre.co.cr/")
 
     # # 📂 Carpeta para capturas (dentro de report para que HTML la encuentre)
@@ -48,7 +49,7 @@ def step_ingresa_pagin(context):
     #         attachment_type=allure.attachment_type.PNG
     #     )
     # time.sleep(2)
-
+    #func.add_screenshot_to_allure(context, name="Captura de pantalla",attachment_type=allure.attachment_type.PNG)
     screenshot = context.driver.get_screenshot_as_png()
     allure.attach(
         screenshot,
