@@ -2,52 +2,52 @@
   "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
   "name" : "timeline",
   "children" : [ {
-    "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.1 ",
-    "uid" : "1a9671485497e673",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1754619034754,
-      "stop" : 1754619051241,
-      "duration" : 16487
-    },
-    "flaky" : false,
-    "parameters" : [ "PlayStation 5" ]
-  }, {
-    "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.3 ",
-    "uid" : "e4cfcab87623e475",
-    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "passed",
-    "time" : {
-      "start" : 1754619067114,
-      "stop" : 1754619083021,
-      "duration" : 15907
-    },
-    "flaky" : false,
-    "parameters" : [ "Nintendo Switch" ]
-  }, {
     "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.2 ",
-    "uid" : "5d7c72a672777c72",
+    "uid" : "9cdf2ddb1ac0edbc",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
     "status" : "passed",
     "time" : {
-      "start" : 1754619051243,
-      "stop" : 1754619067104,
-      "duration" : 15861
+      "start" : 1755016172863,
+      "stop" : 1755016191583,
+      "duration" : 18720
     },
     "flaky" : false,
-    "parameters" : [ "Xbox Series X" ]
+    "parameters" : [ "Xbox Series X", "//a[contains(text(),'Xbox Series X Blanco')]", "Xbox Series X Blanco" ]
   }, {
     "name" : "Ingresar a Mercado Libre y buscar un producto (específico)",
-    "uid" : "5c726076b734b911",
+    "uid" : "5f14006512c142ad",
     "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
-    "status" : "skipped",
+    "status" : "passed",
     "time" : {
-      "start" : 1754619083023,
-      "stop" : 1754619083024,
-      "duration" : 1
+      "start" : 1755016210354,
+      "stop" : 1755016229007,
+      "duration" : 18653
     },
     "flaky" : false,
     "parameters" : [ ]
+  }, {
+    "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.1 ",
+    "uid" : "3b0752ed10633348",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1755016153836,
+      "stop" : 1755016172862,
+      "duration" : 19026
+    },
+    "flaky" : false,
+    "parameters" : [ "PlayStation 5", "//a[contains(text(),'Playstation 5 Slim Digital Avenida Tecnologica')]", "Playstation 5 Slim Digital Avenida Tecnologica" ]
+  }, {
+    "name" : "Ingresar a Mercado Libre y buscar un producto con diferentes artículos -- @1.3 ",
+    "uid" : "79f2c65863ec6a22",
+    "parentUid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+    "status" : "passed",
+    "time" : {
+      "start" : 1755016191584,
+      "stop" : 1755016210352,
+      "duration" : 18768
+    },
+    "flaky" : false,
+    "parameters" : [ "Nintendo Switch", "//a[contains(text(),'Nintendo Switch Oled Avenida Tecnologica')]", "Nintendo Switch Oled Avenida Tecnologica" ]
   } ]
 }

@@ -1,4 +1,4 @@
-@mercado_libre_varios
+@mercado_libre
 Feature: Buscar producto en Mercado Libre
 
 @mercado_libre_scenario_outline
@@ -7,13 +7,13 @@ Scenario Outline: Ingresar a Mercado Libre y buscar un producto con diferentes a
     When ingresa a la pagina de Mercado Libre
     When usuario busca el producto <Articulo>
     When usuario presiona la tecla Enter
-    Then verifica que se muestran los resultados de la búsqueda
+    Then verifica que se muestran los resultados de la búsqueda con el elemento buscado "<ElementoBusqueda>" y el texto esperado "<TextoEsperado>"
 
     Examples:
-    |Articulo|
-    |PlayStation 5|
-    |Xbox Series X|
-    |Nintendo Switch|
+    |Articulo|ElementoBusqueda|TextoEsperado|
+    |PlayStation 5|//a[contains(text(),'Playstation 5 Slim Digital Avenida Tecnologica')]|Playstation 5 Slim Digital Avenida Tecnologica|
+    |Xbox Series X|//a[contains(text(),'Xbox Series X Blanco')]|Xbox Series X Blanco|
+    |Nintendo Switch|//a[contains(text(),'Nintendo Switch Oled Avenida Tecnologica')]|Nintendo Switch Oled Avenida Tecnologica|
 
 @mercado_libre_scenario
 Scenario: Ingresar a Mercado Libre y buscar un producto (específico)
@@ -21,7 +21,7 @@ Scenario: Ingresar a Mercado Libre y buscar un producto (específico)
     When ingresa a la pagina de Mercado Libre
     When usuario busca el producto Roku Streaming Stick
     When usuario presiona la tecla Enter
-    Then verifica que se muestran los resultados de la búsqueda
+    Then verifica que se muestran los resultados de la búsqueda con el elemento buscado "//a[contains(text(),'Roku Express Hd Streaming Media Player *itech')]" y el texto esperado "Roku Express Hd Streaming Media Player *itech"
 
 ## Ejecutar pruebas en behave en consola: behave
 
