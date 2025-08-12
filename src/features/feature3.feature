@@ -49,3 +49,8 @@ Scenario: Ingresar a Mercado Libre y buscar un producto (específico)
 #behave -f behave_html_formatter:HTMLFormatter -o reports_html/html_report.html -t @mercado_libre
 #behave -f behave_html_formatter:HTMLFormatter -o reports_html/html_report.html @demo_qa_scenario
 #behave -f behave_html_formatter:HTMLFormatter -o reports_html/html_report.html
+
+#behave -f html -o report/report.html -f allure_behave.formatter:AllureFormatter -o allure-results
+
+#Por Validar
+#behave feature3.feature -f behave_html_formatter:HTMLFormatter -o ../reports/report.html -f allure_behave.formatter:AllureFormatter -o ../reports/allure-results -t @mercado_libre_scenario
