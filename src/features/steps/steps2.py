@@ -28,28 +28,6 @@ def step_open_navegador(context):
 def step_ingresa_pagina(context):
     context.driver.get("https://www.mercadolibre.co.cr/")
 
-    # # 📂 Carpeta para capturas (dentro de report para que HTML la encuentre)
-    # screenshot_dir = r"../img/screenshots"
-    # os.makedirs(screenshot_dir, exist_ok=True)
-    # # 📄 Nombre único con timestamp
-    # timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    # file_name = f"screenshot_{timestamp}.png"
-    # file_path = os.path.join(screenshot_dir, file_name)
-    # # 📷 Guardar para HTML
-    # context.driver.save_screenshot(file_path)
-    # # Ruta para enlace HTML (relativa al HTML report)
-    # href_path = f"{screenshot_dir}/{file_name}".replace("\\", "/")
-    # # Enlace visible en behave-html-formatter
-    # print(f'<a href="{href_path}" target="_blank">Ver captura</a>')
-    # # 🖼 Adjuntar a Allure
-    # with open(file_path, "rb") as img_file:
-    #     allure.attach(
-    #         img_file.read(),
-    #         name=f"Captura {timestamp}",
-    #         attachment_type=allure.attachment_type.PNG
-    #     )
-    # time.sleep(2)
-    #func.add_screenshot_to_allure(context, name="Captura de pantalla",attachment_type=allure.attachment_type.PNG)
     screenshot = context.driver.get_screenshot_as_png()
     allure.attach(
         screenshot,
