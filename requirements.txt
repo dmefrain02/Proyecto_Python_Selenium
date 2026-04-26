@@ -2,9 +2,9 @@ webdriver-manager
 selenium
 html-testRunner
 unittest-xml-reporting
-pytest
+pytest == 8.4.1
 behave==1.2.6
-allure-behave==2.13.2
-allure-python-commons==2.13.2
+allure-behave==2.15.3
+allure-python-commons==2.15.3
 allure-pytest==2.15.3
 behave-html-formatter==0.9.10
