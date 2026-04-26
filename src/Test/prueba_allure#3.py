@@ -71,7 +71,7 @@ class Test(unittest.TestCase):
             self.driver.implicitly_wait(10)
         
         with allure.step(u"Paso 4: Ingresar datos en el campo Email del formulario"):
-            self.driver.find_element("xpath","//input[@id='userEmail']").send_keys("user975@example.com")
+            self.driver.find_element("xpath","//input[@id='userEmail']").send_keys("user980@example.com")
             
             #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
             #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
