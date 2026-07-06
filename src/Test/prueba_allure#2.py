@@ -87,7 +87,7 @@ class Test(unittest.TestCase):
             self.driver.implicitly_wait(10) 
         
         with allure.step(u'Paso 5: Ingresar datos en el campo Email del formulario de registro'):
-            self.driver.find_element("id","input-email").send_keys("user980@example.com")
+            self.driver.find_element("id","input-email").send_keys("user2520@example.com")
             
             #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
             #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
@@ -186,9 +186,9 @@ class Test(unittest.TestCase):
 #allure serve allure-results
 
 #Abrir el reporte Allure a partir de la carpeta allure report generada con los resultados
-#allure generate ../reports/allure-results -o ../reports/allure-report --clean
+#allure generate reportsAllure/allure-results -o reportsAllure/allure-report --clean
 #allure generate allure-results -o allure-report --clean
-#allure open ../reports/allure-report
+#allure open src/report/reportsAllure/allure-report
 
 #Si da error al ejecutar la pruebas, verificar que la version de Allure-Pytest sea compatible con la version de Allure Commandline instalada en el equipo, para esto se pueden consultar 
 #las versiones compatibles en la documentación oficial de Allure-Pytest.
