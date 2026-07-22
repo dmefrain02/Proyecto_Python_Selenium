@@ -3,8 +3,10 @@ import HtmlTestRunner #Importamos el módulo HtmlTestRunner para generar reporte
                       #ejecutadas, los resultados obtenidos y cualquier error que haya ocurrido durante la ejecución de las pruebas.
 from selenium import webdriver #Importamos la clase webdriver para controlar el navegador y realizar las acciones necesarias para la prueba
 from selenium.webdriver.chrome.service import Service as ChromeService #Importamos la clase Service para configurar el servicio del navegador, indicando la ruta del driver
+from selenium.webdriver.firefox.service import Service as FirefoxService #Importamos la clase Service para configurar el servicio del navegador, indicando la ruta del driver
 from selenium.webdriver.chrome.options import Options #Importamos la clase Options para configurar las opciones del navegador, como el modo headless o el tamaño de la ventana
 from webdriver_manager.chrome import ChromeDriverManager #Importamos el ChromeDriverManager para gestionar la instalación y actualización del driver de Chrome de forma automática
+from webdriver_manager.firefox import GeckoDriverManager #Importamos el GeckoDriverManager para gestionar la instalación y actualización del driver de Firefox de forma automática
 from selenium.webdriver.common.keys import Keys #Importamos la clase Keys para simular la pulsación de teclas en el navegador
 import os #Importamos el módulo os para interactuar con el sistema operativo, como crear directorios o guardar archivos
 from datetime import datetime #Importamos la clase datetime para obtener la fecha y hora actual, utilizada para generar nombres de archivos únicos al guardar capturas de pantalla o reportes
@@ -12,27 +14,28 @@ from datetime import datetime #Importamos la clase datetime para obtener la fech
 class TestPractica(unittest.TestCase):
     def setUp(self):
         #Objeto en el cual se configuran las opciones del navegador
-        options = Options()
-        options.add_argument('start-maximized')
+        #options = Options()
+        #options.add_argument('start-maximized')
         #options.headless = True #Ejecuta el navegador en modo headless (sin interfaz gráfica)
 
         #Objeto en el cual se configura las preferencias del navegador
-        preferences = {
-            "profile.default_content_settings.popups": 0,
-            "directory_upgrade":True,
-            "download.default_directory": r"C:\Users\dmefr\Downloads"
-        }
+        #preferences = {
+        #    "profile.default_content_settings.popups": 0,
+        #    "directory_upgrade":True,
+        #    "download.default_directory": r"C:\Users\dmefr\Downloads"
+        #}
         #Agregamos las preferencias al objeto de opciones del navegador
-        options.add_experimental_option("prefs", preferences)
+        #options.add_experimental_option("prefs", preferences)
 
         #Utilizamos sólo alguno de los servicios para configurar el driver, no ambos
         #Configuramos el servicio del navegador, indicando la ruta del driver
         #service = ChromeService(executable_path= "C:\Users\dmefr\OneDrive\Escritorio\Proyecto_Python_Selenium\src\Drivers\chromedriver.exe")
         #Configuramos el servicio del navegador, utilizando el webdriver manager para indicar el driver
-        service = ChromeService(executable_path= ChromeDriverManager().install())
-        
+        #service = ChromeService(executable_path= ChromeDriverManager().install())
+        service = FirefoxService(executable_path= GeckoDriverManager().install())
+
         #Inicializamos el driver del navegador, utilizando el servicio y las opciones configuradas
-        self.driver = webdriver.Chrome(service=service, options=options)
+        self.driver = webdriver.Firefox(service=service)
 
     def test_open_cart(self):
         #Navegamos al sitio de prueba
@@ -51,7 +54,7 @@ class TestPractica(unittest.TestCase):
         #las acciones necesarias para completar el proceso de registro
         self.driver.find_element("id","input-firstname").send_keys("Username")
         self.driver.find_element("id","input-lastname").send_keys("Lastname")
-        self.driver.find_element("id","input-email").send_keys("user90@example.com")
+        self.driver.find_element("id","input-email").send_keys("user575@example.com")
         self.driver.find_element("id","input-telephone").send_keys("123456789")
         self.driver.find_element("css selector","#input-password").send_keys("password")
         self.driver.find_element("css selector","#input-confirm").send_keys("password")
@@ -81,9 +84,9 @@ class TestPractica(unittest.TestCase):
         file_path = os.path.join("../img/",file_name)
         self.driver.save_screenshot(file_path)
 
-def teardown(self):
-    #Cerramos el navegador al finalizar la prueba
-    self.driver.quit()  
+    def teardown(self):
+        #Cerramos el navegador al finalizar la prueba
+        self.driver.quit()  
 
 #Ejecución de la prueba utilizando el runner de HTMLTestRunner para generar un reporte en formato HTML o 
 #sin utilizar el runner para generar la información de la ejecución en consola, no ambos a la vez
