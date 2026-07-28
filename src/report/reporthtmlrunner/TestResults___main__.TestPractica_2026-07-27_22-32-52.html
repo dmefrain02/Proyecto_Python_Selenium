@@ -11,8 +11,8 @@
         <div class="row">
             <div class="col-xs-12">
                 <h2 class="text-capitalize">Unittest Results</h2>
-                <p class='attribute'><strong>Start Time: </strong>2026-07-21 21:41:34</p>
-                <p class='attribute'><strong>Duration: </strong>8.58 s</p>
+                <p class='attribute'><strong>Start Time: </strong>2026-07-27 22:32:52</p>
+                <p class='attribute'><strong>Duration: </strong>4.05 s</p>
                 <p class='attribute'><strong>Summary: </strong>Total: 1, Pass: 0, Error: 1</p>
             </div>
         </div>
@@ -37,33 +37,73 @@
                             </td>
                         </tr>
                         <tr style="display:none;">
-                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">SessionNotCreatedException: Message: Unable to find a matching set of capabilities
+                            <td class="col-xs-9" colspan="3"><p style="color:maroon;">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=151.0.7922.47)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109d993+fca3]
+	chromedriver!GetHandleVerifier [0x109d9d4+fce4]
+	chromedriver!(No symbol) [0xe79240]
+	chromedriver!(No symbol) [0xe58213]
+	chromedriver!(No symbol) [0xeebf9b]
+	chromedriver!(No symbol) [0xf02e19]
+	chromedriver!(No symbol) [0xee5626]
+	chromedriver!(No symbol) [0xeb87f9]
+	chromedriver!(No symbol) [0xeb95c4]
+	chromedriver!GetHandleVerifier [0x13289ea+29acfa]
+	chromedriver!GetHandleVerifier [0x1323e59+296169]
+	chromedriver!GetHandleVerifier [0x10c900e+3b31e]
+	chromedriver!GetHandleVerifier [0x10b83c6+2a6d6]
+	chromedriver!GetHandleVerifier [0x10bf16d+3147d]
+	chromedriver!GetHandleVerifier [0x10a6938+18c48]
+	chromedriver!GetHandleVerifier [0x10a6ae5+18df5]
+	chromedriver!GetHandleVerifier [0x108fb4f+1e5f]
+	KERNEL32!BaseThreadInitThunk [0x76425d49+19]
+	ntdll!RtlInitializeExceptionChain [0x778fe00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x778fdf91+231]
 </p><p style="color:maroon;">Traceback (most recent call last):
-  File "C:\Users\dmefr\OneDrive\Escritorio\Proyecto_Python_Selenium\src\Test\primera_prueba.py", line 38, in setUp
-    self.driver = webdriver.Firefox(service=service, options=options)
-                  ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Python\Lib\site-packages\selenium\webdriver\firefox\webdriver.py", line 74, in __init__
-    super().__init__(command_executor=executor, options=options)
-    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Python\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 208, in __init__
-    self.start_session(capabilities)
-    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "C:\Python\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 292, in start_session
-    response = self.execute(Command.NEW_SESSION, caps)["value"]
-               ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\dmefr\OneDrive\Escritorio\Proyecto_Python_Selenium\src\Test\primera_prueba.py", line 43, in test_open_cart
+    print(f'Ingreso al sitio de la prueba: {self.driver.title}')
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Python\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 367, in title
+    return self.execute(Command.GET_TITLE).get("value", "")
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
   File "C:\Python\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
     self.error_handler.check_response(response)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
   File "C:\Python\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
     raise exception_class(message, screen, stacktrace)
-selenium.common.exceptions.SessionNotCreatedException: Message: Unable to find a matching set of capabilities
+selenium.common.exceptions.NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=151.0.7922.47)
+Stacktrace:
+	chromedriver!GetHandleVerifier [0x109d993+fca3]
+	chromedriver!GetHandleVerifier [0x109d9d4+fce4]
+	chromedriver!(No symbol) [0xe79240]
+	chromedriver!(No symbol) [0xe58213]
+	chromedriver!(No symbol) [0xeebf9b]
+	chromedriver!(No symbol) [0xf02e19]
+	chromedriver!(No symbol) [0xee5626]
+	chromedriver!(No symbol) [0xeb87f9]
+	chromedriver!(No symbol) [0xeb95c4]
+	chromedriver!GetHandleVerifier [0x13289ea+29acfa]
+	chromedriver!GetHandleVerifier [0x1323e59+296169]
+	chromedriver!GetHandleVerifier [0x10c900e+3b31e]
+	chromedriver!GetHandleVerifier [0x10b83c6+2a6d6]
+	chromedriver!GetHandleVerifier [0x10bf16d+3147d]
+	chromedriver!GetHandleVerifier [0x10a6938+18c48]
+	chromedriver!GetHandleVerifier [0x10a6ae5+18df5]
+	chromedriver!GetHandleVerifier [0x108fb4f+1e5f]
+	KERNEL32!BaseThreadInitThunk [0x76425d49+19]
+	ntdll!RtlInitializeExceptionChain [0x778fe00b+6b]
+	ntdll!RtlGetAppContainerNamedObjectPath [0x778fdf91+231]
 
 </p>
                             </td>
                         </tr>
                         <tr>
                             <td colspan="3">
-                                Total: 1, Pass: 0, Error: 1 -- Duration: 8.58 s
+                                Total: 1, Pass: 0, Error: 1 -- Duration: 4.05 s
                             </td>
                         </tr>
                     </tbody>

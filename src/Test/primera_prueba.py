@@ -14,28 +14,28 @@ from datetime import datetime #Importamos la clase datetime para obtener la fech
 class TestPractica(unittest.TestCase):
     def setUp(self):
         #Objeto en el cual se configuran las opciones del navegador
-        #options = Options()
-        #options.add_argument('start-maximized')
-        #options.headless = True #Ejecuta el navegador en modo headless (sin interfaz gráfica)
+        options = Options()
+        options.add_argument('start-maximized')
+        options.headless = True #Ejecuta el navegador en modo headless (sin interfaz gráfica)
 
         #Objeto en el cual se configura las preferencias del navegador
-        #preferences = {
-        #    "profile.default_content_settings.popups": 0,
-        #    "directory_upgrade":True,
-        #    "download.default_directory": r"C:\Users\dmefr\Downloads"
-        #}
+        preferences = {
+            "profile.default_content_settings.popups": 0,
+            "directory_upgrade":True,
+            "download.default_directory": r"C:\Users\dmefr\Downloads"
+        }
         #Agregamos las preferencias al objeto de opciones del navegador
-        #options.add_experimental_option("prefs", preferences)
+        options.add_experimental_option("prefs", preferences)
 
         #Utilizamos sólo alguno de los servicios para configurar el driver, no ambos
         #Configuramos el servicio del navegador, indicando la ruta del driver
         #service = ChromeService(executable_path= "C:\Users\dmefr\OneDrive\Escritorio\Proyecto_Python_Selenium\src\Drivers\chromedriver.exe")
         #Configuramos el servicio del navegador, utilizando el webdriver manager para indicar el driver
-        #service = ChromeService(executable_path= ChromeDriverManager().install())
-        service = FirefoxService(executable_path= GeckoDriverManager().install())
+        service = ChromeService(executable_path= ChromeDriverManager().install())
+        #service = FirefoxService(executable_path= GeckoDriverManager().install())
 
         #Inicializamos el driver del navegador, utilizando el servicio y las opciones configuradas
-        self.driver = webdriver.Firefox(service=service)
+        self.driver = webdriver.Chrome(options=options,service=service)
 
     def test_open_cart(self):
         #Navegamos al sitio de prueba
@@ -54,7 +54,7 @@ class TestPractica(unittest.TestCase):
         #las acciones necesarias para completar el proceso de registro
         self.driver.find_element("id","input-firstname").send_keys("Username")
         self.driver.find_element("id","input-lastname").send_keys("Lastname")
-        self.driver.find_element("id","input-email").send_keys("user585@example.com")
+        self.driver.find_element("id","input-email").send_keys("user1565@example.com")
         self.driver.find_element("id","input-telephone").send_keys("123456789")
         self.driver.find_element("css selector","#input-password").send_keys("password")
         self.driver.find_element("css selector","#input-confirm").send_keys("password")
@@ -78,10 +78,10 @@ class TestPractica(unittest.TestCase):
 
         #Realizamos una captura de pantalla del resultado de la prueba,
         #guardando la imagen en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores
-        os.makedirs("../img/", exist_ok = True)
+        os.makedirs("../../img/", exist_ok = True)
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         file_name = f"screenshot_{timestamp}.png"
-        file_path = os.path.join("../img/",file_name)
+        file_path = os.path.join("../../img/",file_name)
         self.driver.save_screenshot(file_path)
 
     def teardown(self):
@@ -91,5 +91,5 @@ class TestPractica(unittest.TestCase):
 #Ejecución de la prueba utilizando el runner de HTMLTestRunner para generar un reporte en formato HTML o 
 #sin utilizar el runner para generar la información de la ejecución en consola, no ambos a la vez
 if __name__ == '__main__':
-    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=r"..\reporthtmlrunner"))
+    unittest.main(testRunner=HtmlTestRunner.HTMLTestRunner(output=r"..\report\reporthtmlrunner"))
     #unittest.main()
