@@ -12,6 +12,7 @@ import os #Importamos el módulo os para interactuar con el sistema operativo, c
 from datetime import datetime #Importamos la clase datetime para obtener la fecha y hora actual, utilizada para generar nombres de archivos únicos al guardar capturas de pantalla o reportes
 
 class TestPractica(unittest.TestCase):
+    
     def setUp(self):
         #Objeto en el cual se configuran las opciones del navegador
         options = Options()
@@ -54,7 +55,7 @@ class TestPractica(unittest.TestCase):
         #las acciones necesarias para completar el proceso de registro
         self.driver.find_element("id","input-firstname").send_keys("Username")
         self.driver.find_element("id","input-lastname").send_keys("Lastname")
-        self.driver.find_element("id","input-email").send_keys("user1565@example.com")
+        self.driver.find_element("id","input-email").send_keys("user1585@example.com")
         self.driver.find_element("id","input-telephone").send_keys("123456789")
         self.driver.find_element("css selector","#input-password").send_keys("password")
         self.driver.find_element("css selector","#input-confirm").send_keys("password")

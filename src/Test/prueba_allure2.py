@@ -12,7 +12,7 @@ import allure
 import Functions_Utilitaries.Functions as Utilities #Importamos las funciones de captura de pantalla desde el módulo Functions para utilizarlas en la prueba, 
                                                                                              #permitiendo agregar capturas de pantalla a los reportes de Allure y guardar capturas de pantalla 
                                                                                              #en una carpeta específica durante la ejecución de la prueba.
-
+import time
 @allure.feature(u'Pruebas')
 @allure.story(u'Realizar Registro y Login')
 @allure.testcase(u'Test Case')
@@ -87,7 +87,8 @@ class Test(unittest.TestCase):
             self.driver.implicitly_wait(10) 
         
         with allure.step(u'Paso 5: Ingresar datos en el campo Email del formulario de registro'):
-            self.driver.find_element("id","input-email").send_keys("user4100@example.com")
+            email_unico = f"userExample{int(time.time())}@gmail.com"
+            self.driver.find_element("id","input-email").send_keys(email_unico)
             
             #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
             #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
