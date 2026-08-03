@@ -55,7 +55,7 @@ class TestPractica(unittest.TestCase):
         #las acciones necesarias para completar el proceso de registro
         self.driver.find_element("id","input-firstname").send_keys("Username")
         self.driver.find_element("id","input-lastname").send_keys("Lastname")
-        self.driver.find_element("id","input-email").send_keys("user1585@example.com")
+        self.driver.find_element("id","input-email").send_keys("user15850@example.com")
         self.driver.find_element("id","input-telephone").send_keys("123456789")
         self.driver.find_element("css selector","#input-password").send_keys("password")
         self.driver.find_element("css selector","#input-confirm").send_keys("password")
