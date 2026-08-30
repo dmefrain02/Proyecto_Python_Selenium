@@ -16,27 +16,35 @@ if not Token:
 
 try: 
     #Se realiza autenticacion con el usuario GitHub
+    print("---------------------- Autenticacion usuario de la organización GitHub --------------------------------------")
+    print("-------------------------------------------------------------------------------------------------------------")
     auth = Auth.Token(Token)
     g = Github(auth=auth)
 
     print(f"Autenticando con el token proporcionado...")
     user_auth = g.get_user()
-    print(f"Autenticado exitosamente como: {user_auth.login}\n")
+    print(f"Autenticado exitosamente como: {user_auth.login}")
+    print("-------------------------------------------------------------------------------------------------------------\n")
 except GithubException as e:
-    print(f"Error: {e.data.get('message', e)}\n") 
+    print(f"Error: {e.data.get('message', e)}") 
+    print("-----------------------------------------------------------------------------------------------------------\n")
     sys.exit(1)    
 except Exception as e:
-    print(f"Error inesperado durante la autenticación o al acceder a la organización: {e}.\n")
+    print(f"Error inesperado durante la autenticación o al acceder a la organización: {e}.")
+    print("-----------------------------------------------------------------------------------------------------------\n")
     sys.exit(1)
 
 try:
     #Se lee el contenido del archivo CSV con los usuarios a los que se les creara el repositorio GitHub a partir de la plantilla
+    print("----------------------------- Leyendo Archivo CSV con los estudiantes ---------------------------------------")
+    print("-------------------------------------------------------------------------------------------------------------")
     with open(CSV_FILE_PATH,mode='r', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         required_columns = {'org_name', 'username', 'template_repo'}
 
         if not required_columns.issubset(reader.fieldnames):
             print(f"Error: El archivo CSV debe contener las columnas 'org_name', 'username' y 'template_repo.'.")
+            print("--------------------------------------------------------------------------------------------")
             sys.exit(1)
         else:
             print(f"Archivo CSV '{CSV_FILE_PATH}' leído correctamente.")
@@ -46,18 +54,22 @@ try:
             
             for row in rows:
                 print(f"Organización: {row['org_name']}, Usuario: {row['username']}, Repositorio Plantilla: {row['template_repo']}")
+                print("--------------------------------------------------------------------------------------------------------------")
 except FileNotFoundError:
     print(f"Error: El archivo CSV '{CSV_FILE_PATH}' no se encontró.\n")
+    print("--------------------------------------------------------------------------------------------")
     sys.exit(1)
 
 #Recorrido por los registros leídos del archivo CSV
+print("------------------------- Procesamiento repositorios de los estudiantes --------------------------------------")
+print("--------------------------------------------------------------------------------------------------------------")
 for row in rows:
     org_target = row["org_name"].strip()
     user_target = row["username"].strip()
     template_repo_name = row["template_repo"].strip()
     new_repo_name = f"{org_target}-{user_target}"
 
-    print(f"\nProcesando repositorio de estudiante: {user_target}")
+    print(f"\nProcesando repositorio de estudiante para el usuario: {user_target}")
     print(f"Usuario       : {user_target}")
     print(f"Organización  : {org_target}")
     print(f"Template      : {template_repo_name}")
@@ -65,25 +77,33 @@ for row in rows:
 
     try:
         #Accediendo a la organización donde se crearan los repositorios de los estudiantes
-        print("Accediendo a la organización...")
+        print("------------------------- Accediendo a la organización de los repositorios -----------------------------------")
+        print("--------------------------------------------------------------------------------------------------------------")
         org = g.get_organization(org_target)
         print(f"Organización encontrada: {org.login}")
 
         #Buscando el repositorio plantilla que se utilizará para crear los repositorios de los estudiantes
+        print("------------------------- Buscando el repositorio plantilla en la organización -------------------------------")
+        print("--------------------------------------------------------------------------------------------------------------")
         print(f"Buscando repositorio plantilla '{template_repo_name}'...")
         template_repo_name = g.get_repo(template_repo_name)
         print(f"Repositorio de plantilla encontrado '{template_repo_name}'.\n")
 
         try:
             #Se valida si el repositorio, ya existe. Si existe, no se crea y se continua con el proceso.
+            print("-------------- Validando si el repositorio del estudiante ya existe en la organización -----------------------")
+            print("--------------------------------------------------------------------------------------------------------------")
             existing_repo = org.get_repo(new_repo_name)
             print(f"El repositorio {new_repo_name} ya existe")
+            print("--------------------------------------------------------------------------------------------------------------")
             continue
         except GithubException as e:
             if e.status != 404:
                 raise
 
         #Creando el repositorio para cada uno de los estudiantes en el archivo CSV
+        print("------------------------------ Creando repositorio del estudiante --------------------------------------------")
+        print("--------------------------------------------------------------------------------------------------------------")
         print(f"Creando un nuevo repositorio '{new_repo_name}' desde la plantilla '{template_repo_name}'...")
         repo = org.create_repo_from_template(
             name = new_repo_name,
@@ -93,22 +113,29 @@ for row in rows:
         )
 
         #Se imprime el repositorio creado junto con la URL
-        print(f"Repositorio plantilla '{new_repo_name}' creado con éxito con la URL: {repo.html_url}\n")
+        print(f"Repositorio plantilla '{new_repo_name}' creado con éxito con la URL: {repo.html_url}")
+        print("--------------------------------------------------------------------------------------------------------------\n")
 
         #Añadir al alumno como colaborador con permisos de escritura
+        print("------------------ Asignando permisos de escritura al repositorio del estudiante -----------------------------")
+        print("--------------------------------------------------------------------------------------------------------------\n")
         print(f"Añadiendo a {user_target} como colaborador...")
         repo.add_to_collaborators(user_target, permission="push")
-        print(f"Permiso agregado correctamente con el usuario: {user_target}.\n")
+        print(f"Permiso agregado correctamente con el usuario: {user_target}.")
+        print("--------------------------------------------------------------------------------------------------------------\n")
     except GithubException as e:
         message = (
         e.data.get("message",str(e))
         if isinstance(e.data, dict) else str(e))
 
-        print(f"Error: Error GitHub con el usuario {user_target}: {message}\n")
+        print(f"Error: Error GitHub con el usuario {user_target}: {message}")
+        print("--------------------------------------------------------------------------------------------------------------\n")
         sys.exit(1)
     except Exception as e:
-        print(f"Error procesando a {user_target}:{e}\n")
+        print(f"Error procesando a {user_target}:{e}")
+        print("--------------------------------------------------------------------------------------------------------------\n")
         sys.exit(1)
 
 print("Proceso Finalizado")
+print("--------------------------------------------------------------------------------------------------------------")
 g.close()
