@@ -45,7 +45,7 @@ try:
             print(f"Contenido del CSV:")
             
             for row in rows:
-                print(f"Organización: {row['org_name']}, Usuario: {row['username']}, Repositorio Plantilla: {row['template_repo']}\n")
+                print(f"Organización: {row['org_name']}, Usuario: {row['username']}, Repositorio Plantilla: {row['template_repo']}")
 except FileNotFoundError:
     print(f"Error: El archivo CSV '{CSV_FILE_PATH}' no se encontró.\n")
     sys.exit(1)
@@ -57,7 +57,7 @@ for row in rows:
     template_repo_name = row["template_repo"].strip()
     new_repo_name = f"{org_target}-{user_target}"
 
-    print(f"Procesando repositorio de estudiante: {user_target}\n")
+    print(f"\nProcesando repositorio de estudiante: {user_target}")
     print(f"Usuario       : {user_target}")
     print(f"Organización  : {org_target}")
     print(f"Template      : {template_repo_name}")
