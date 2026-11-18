@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unittest Results</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h2 class="text-capitalize">Unittest Results</h2>
+                <p class='attribute'><strong>Start Time: </strong>2026-11-17 20:07:11</p>
+                <p class='attribute'><strong>Duration: </strong>28.21 s</p>
+                <p class='attribute'><strong>Summary: </strong>Total: 1, Pass: 0, Error: 1</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-md-10">
+                <table class='table table-hover table-responsive'>
+                    <thead>
+                        <tr>
+                            <th>__main__.TestPractica</th>
+                            <th>Status</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class='warning'>
+                            <td class="col-xs-10">test_open_cart</td>
+                            <td class="col-xs-1">
+                                <span class="label label-warning" style="display:block;width:40px;">Error</span>
+                            </td>
+                            <td class="col-xs-1">
+                                <button class="btn btn-default btn-xs">View</button>
+                            </td>
+                        </tr>
+                        <tr style="display:none;">
+                            <td class="col-xs-9" colspan="3"><p>Ingreso al sitio de la prueba: Your Store
+</p><p style="color:maroon;">NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(text(),'Congratulations! Your new account has been success')]"}
+  (Session info: chrome=157.0.8103.79); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xd6bce3]
+	(No symbol) [0xc704c4]
+	(No symbol) [0xa6c670]
+	(No symbol) [0xab7e86]
+	(No symbol) [0xab805b]
+	(No symbol) [0xb023b2]
+	(No symbol) [0xadaab4]
+	(No symbol) [0xaffc23]
+	(No symbol) [0xada806]
+	(No symbol) [0xaacb6a]
+	(No symbol) [0xaad9f4]
+	(No symbol) [0x1243c34]
+	(No symbol) [0x125e78b]
+	(No symbol) [0xec9a42]
+	(No symbol) [0xed1fe3]
+	(No symbol) [0xc7f198]
+	(No symbol) [0xc79d08]
+	(No symbol) [0xc79eb5]
+	(No symbol) [0xc65b67]
+	(No symbol) [0x76335d49]
+	(No symbol) [0x77b3c88b]
+	(No symbol) [0x77b3c811]
+</p><p style="color:maroon;">Traceback (most recent call last):
+  File "C:\Users\dmefr\OneDrive\Escritorio\Proyecto_Python_Selenium\src\Test\primera_prueba1.py", line 76, in test_open_cart
+    elementoText = self.driver.find_element("xpath","//p[contains(text(),'Congratulations! Your new account has been success')]").text
+                   ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 741, in find_element
+    return self.execute(Command.FIND_ELEMENT, {"using": by, "value": value})["value"]
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python\Lib\site-packages\selenium\webdriver\remote\webdriver.py", line 347, in execute
+    self.error_handler.check_response(response)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
+  File "C:\Python\Lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 229, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//p[contains(text(),'Congratulations! Your new account has been success')]"}
+  (Session info: chrome=157.0.8103.79); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+Symbols not available. Dumping unresolved backtrace:
+	(No symbol) [0xd6bce3]
+	(No symbol) [0xc704c4]
+	(No symbol) [0xa6c670]
+	(No symbol) [0xab7e86]
+	(No symbol) [0xab805b]
+	(No symbol) [0xb023b2]
+	(No symbol) [0xadaab4]
+	(No symbol) [0xaffc23]
+	(No symbol) [0xada806]
+	(No symbol) [0xaacb6a]
+	(No symbol) [0xaad9f4]
+	(No symbol) [0x1243c34]
+	(No symbol) [0x125e78b]
+	(No symbol) [0xec9a42]
+	(No symbol) [0xed1fe3]
+	(No symbol) [0xc7f198]
+	(No symbol) [0xc79d08]
+	(No symbol) [0xc79eb5]
+	(No symbol) [0xc65b67]
+	(No symbol) [0x76335d49]
+	(No symbol) [0x77b3c88b]
+	(No symbol) [0x77b3c811]
+
+</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Total: 1, Pass: 0, Error: 1 -- Duration: 28.21 s
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('td').on('click', '.btn', function(e){
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                var $this = $(this);
+                var $nextRow = $this.closest('tr').next('tr');
+                $nextRow.slideToggle("fast");
+                $this.text(function(i, text){
+                    if (text === 'View') {
+                        return 'Hide';
+                    } else {
+                        return 'View';
+                    };
+                });
+            });
+        });
+    </script>
+</body>
+</html
