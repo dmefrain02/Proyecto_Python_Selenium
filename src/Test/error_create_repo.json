@@ -1,0 +1,35 @@
+[
+    {
+        "Usuario_Repo": "a_code",
+        "Repositorio": "CursoCalidadSoftware-2-a_code",
+        "Mensaje": "Error: Error GitHub con el usuario a_code: Not Found",
+        "Detalle GitHub": {
+            "message": "Not Found",
+            "documentation_url": "https://docs.github.com/rest/collaborators/collaborators#add-a-repository-collaborator",
+            "status": "404"
+        }
+    },
+    {
+        "Usuario_Repo": "b_code",
+        "Repositorio": "CursoCalidadSoftware-2-b_code",
+        "Mensaje": "Error: Error GitHub con el usuario b_code: Could not clone: Name already exists on this account",
+        "Detalle GitHub": {
+            "message": "Could not clone: Name already exists on this account",
+            "errors": [
+                "Could not clone: Name already exists on this account"
+            ],
+            "documentation_url": "https://docs.github.com/rest/repos/repos#create-a-repository-using-a-template",
+            "status": "422"
+        }
+    },
+    {
+        "Usuario_Repo": "c_code",
+        "Repositorio": "CursoCalidadSoftware-2-c_code",
+        "Mensaje": "Error: Error GitHub con el usuario c_code: Not Found",
+        "Detalle GitHub": {
+            "message": "Not Found",
+            "documentation_url": "https://docs.github.com/rest/collaborators/collaborators#add-a-repository-collaborator",
+            "status": "404"
+        }
+    }
+]
