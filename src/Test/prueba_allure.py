@@ -1,0 +1,183 @@
+import unittest #Importamos el módulo unittest para crear y ejecutar pruebas unitarias, proporcionando una estructura para definir casos de prueba, configurar el entorno de prueba y realizar aserciones para validar los resultados de las pruebas.
+import HtmlTestRunner #Importamos el módulo HtmlTestRunner para generar reportes en formato HTML de las pruebas realizadas, permitiendo una visualización más clara y detallada de los resultados de las pruebas con información sobre las pruebas 
+                      #ejecutadas, los resultados obtenidos y cualquier error que haya ocurrido durante la ejecución de las pruebas.
+from selenium import webdriver #Importamos la clase webdriver para controlar el navegador y realizar las acciones necesarias para la prueba
+from selenium.webdriver.chrome.service import Service as ChromeService #Importamos la clase Service para configurar el servicio del navegador, indicando la ruta del driver
+from selenium.webdriver.chrome.options import Options #Importamos la clase Options para configurar las opciones del navegador, como el modo headless o el tamaño de la ventana
+from webdriver_manager.chrome import ChromeDriverManager #Importamos el ChromeDriverManager para gestionar la instalación y actualización del driver de Chrome de forma automática
+from selenium.webdriver.common.keys import Keys #Importamos la clase Keys para simular la pulsación de teclas en el navegador
+import os #Importamos el módulo os para interactuar con el sistema operativo, como crear directorios o guardar archivos
+from datetime import datetime #Importamos la clase datetime para obtener la fecha y hora actual, utilizada para generar nombres de archivos únicos al guardar capturas de pantalla o reportes
+import allure
+import Functions_Utilitaries.Functions as Utilities #Importamos las funciones de captura de pantalla desde el módulo Functions para utilizarlas en la prueba, 
+                                                                                             #permitiendo agregar capturas de pantalla a los reportes de Allure y guardar capturas de pantalla 
+                                                                                             #en una carpeta específica durante la ejecución de la prueba.
+import time
+
+@allure.feature(u'Pruebas')
+@allure.story(u'Realizar Registro y Login')
+@allure.testcase(u'Test Case')
+@allure.severity(allure.severity_level.CRITICAL)
+@allure.description(u"""Caso de prueba para verificar el</br> login y </br> registro en el aplicativo web de pruebas""")
+
+class Test(unittest.TestCase):
+    
+    def setUp(self):
+        with allure.step(u'Paso 1: Preparar configuraciones instancia del navegador'):
+            #Objeto en el cual se configuran las opciones del navegador
+            options = Options()
+            options.add_argument('start-maximized')
+            #options.headless = True #Ejecuta el navegador en modo headless (sin interfaz gráfica)
+
+            #Objeto en el cual se configura las preferencias del navegador
+            preferences = {
+                "profile.default_content_settings.popups": 0,
+                "directory_upgrade":True,
+                "download.default_directory": r"C:\Users\dmefr\Downloads"
+            }
+            #Agregamos las preferencias al objeto de opciones del navegador
+            options.add_experimental_option("prefs", preferences)
+
+            #Utilizamos sólo alguno de los servicios para configurar el driver, no ambos
+            #Configuramos el servicio del navegador, indicando la ruta del driver
+            #service = ChromeService(executable_path= "C:\Users\dmefr\OneDrive\Escritorio\Proyecto_Python_Selenium\src\Drivers\chromedriver.exe")
+            #Configuramos el servicio del navegador, utilizando el webdriver manager para indicar el driver
+            service = ChromeService(executable_path= ChromeDriverManager().install())
+            
+            #Inicializamos el driver del navegador, utilizando el servicio y las opciones configuradas
+            self.driver = webdriver.Chrome(service=service, options=options)
+
+    def test_001(self):
+        with allure.step(u'Paso 2: Ir al sitio de la aplicacion de pruebas'):
+            #Navegamos al sitio de prueba
+            self.driver.get("http://opencart.abstracta.us/")
+            print(f'Ingreso al sitio de la prueba: {self.driver.title}')
+
+        with allure.step(u'Paso 3: Navegar a la seccion de registro'):
+            #Realizamos el proceso de registro, navegando a la sección de registro.
+            self.driver.find_element("xpath","//a[@title='My Account']").click()
+            self.driver.find_element("xpath","//a[normalize-space()='Register']").click()
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+            
+        with allure.step(u'Paso 3: Ingresar datos en el campo First Name del formulario de registro'):
+            #Realizamos el proceso de registro de un nuevo usuario en el sitio de prueba encontrando
+            #los elementos necesarios para el proceso de registro mediante los selectoresy realizando
+            #las acciones necesarias para completar el proceso de registro
+            self.driver.find_element("id","input-firstname").send_keys("Username")
+
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+        
+        with allure.step(u'Paso 4: Ingresar datos en el campo Last Name del formulario de registro'):
+            self.driver.find_element("id","input-lastname").send_keys("Lastname")
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+        
+        with allure.step(u'Paso 5: Ingresar datos en el campo Email del formulario de registro'):
+            email_unico = f"userExample{int(time.time())}@gmail.com"
+            self.driver.find_element("id","input-email").send_keys(email_unico)
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+        
+        with allure.step(u'Paso 6: Ingresar datos en el campo Telefono del formulario de registro'):
+            self.driver.find_element("id","input-telephone").send_keys("123456789")
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+    
+        with allure.step(u'Paso 7: Ingresar datos en el campo Password del formulario de registro'):
+            self.driver.find_element("css selector","#input-password").send_keys("password")
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+        
+        with allure.step(u'Paso 8: Ingresar datos en el campo Password Confirm del formulario de registro'):
+            self.driver.find_element("css selector","#input-confirm").send_keys("password")
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+        
+        with allure.step(u'Paso 9: Marcar el campo Suscribe del formulario de registro'):
+            self.driver.find_element("xpath","//label[normalize-space()='Yes']").click()
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10)  
+        
+        with allure.step(u'Paso 10: Marcar el campo Privacy Policy del formulario de registro'):
+            self.driver.find_element("name","agree").click()
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+        
+        with allure.step(u'Paso 11: Presionar el boton Continuar para realizar el registro'):
+            #Realizamos el proceso de registro, haciendo clic en el botón de continuar para completar el proceso de registro
+            self.driver.find_element("xpath","//input[@value='Continue']").click()
+            
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+        
+        with allure.step(u'Paso 12: Validaciones en el registro: Registro Exitoso'):
+            #Validamos que el proceso de registro se haya realizado exitosamente, encontrando el elemento que contiene el mensaje de registro exitoso
+            #y comparando su texto con el mensaje esperado utilizando una aserción
+            elementoText = self.driver.find_element("xpath","//p[contains(text(),'Congratulations! Your new account has been success')]").text
+            print(f'El mensaje de registro exitoso es: {elementoText}')
+            self.assertEqual(elementoText,"Congratulations! Your new account has been successfully created!","El mensaje de registro no coincide con el esperado")
+        
+        with allure.step(u'Paso 13: Captura de pantalla del resultado de la prueba'):    
+            #Agregamos una captura de pantalla del ingreso a la sección de registro, utilizando la función add_screenshot para agregar la captura de pantalla al reporte de Allure, 
+            #y la función screenshot_test para guardar la captura de pantalla en una carpeta específica con un nombre que incluye un timestamp para evitar sobrescribir imágenes anteriores.
+            Utilities.add_screenshot(self, "Ingreso a la seccion de registro")
+            Utilities.screenshot_test(self)            
+            #Esperamos de forma implícita hasta que los elementos estén disponibles para interactuar
+            self.driver.implicitly_wait(10) 
+
+    def tearDown(self):
+        with allure.step(u'Paso 14: Cerrar la instancia del navegador'):
+            self.driver.quit()
+
+if __name__ == '__main__':
+    unittest.main()
